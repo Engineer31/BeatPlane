@@ -10,8 +10,6 @@ int main(void)
     ARMTargetInit();        // do target (uHAL based ARM system) initialisation //
     LCD_Init();
     GPIO_Init(); 
-    Led_Init();
-    
     OSInit();               // needed by uC/OS-II //
     
     OSTaskCreate(Task_Start,(void *)0,

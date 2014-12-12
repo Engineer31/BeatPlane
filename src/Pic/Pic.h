@@ -39,3 +39,7 @@ extern const unsigned char gImage_MiddleFoeD[12144];
 extern unsigned short gImage_MiddleFoeD_Witch;
 extern unsigned short gImage_MiddleFoeD_Length;
 
+extern unsigned short gImage_BeatPlane_Text_Witch;
+extern unsigned short gImage_BeatPlane_Text_Length;
+extern const unsigned char gImage_BeatPlane_Text[17976]; 
+

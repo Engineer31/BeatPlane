@@ -845,6 +845,9 @@
         <name>$PROJ_DIR$\src\Pic\BackGround.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\src\Pic\BeatPlane_Text.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\src\Pic\MiddleFoe1.c</name>
       </file>
       <file>
@@ -886,6 +889,12 @@
     </file>
     <file>
       <name>$PROJ_DIR$\src\main.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\myplane.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\myplane.h</name>
     </file>
   </group>
   <group>

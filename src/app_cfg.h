@@ -4,12 +4,14 @@
 
 /*******************设置任务优先级*******************/
 #define STARTUP_TASK_PRIO       0	   				//开始启动的任务的优先级
-#define TOUCH_TASK_PRIO       	1					//触摸优先级
-#define COUNT_TASK_PRIO       	6					//计算优先级
+#define STARTGAME_TASK_PRIO     1					//开始游戏任务优先级
+#define KEY_TASK_PRIO     2					      //键盘任务优先级
+#define MYPLANE_TASK_PRIO 3                                            //主飞机任务
 
 /************设置栈大小（单位为 OS_STK ）************/
 #define STARTUP_TASK_STK_SIZE   100   
-#define COUNT_TASK_STK_SIZE   	100   
-#define TOUCH_TASK_STK_SIZE   	100 
+#define STARTGAME_TASK_STK_SIZE 100
+#define KEY_TASK_STK_SIZE 100
+#define MYPLANE_TASK_STK_SIZE  200
 
 #endif

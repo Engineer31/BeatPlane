@@ -89,11 +89,17 @@ void LCD_Init()
      	rLCDINTMSK=(INT_FrSyn<<1)|INT_FiCnt;
 	rLCDLPCSEL=0;
 	rTPAL=(0<<24);	  
+	
+      // for(i=0;i<320*240;i++) 
          
        for(i=0;i<240*320;i++) 
-	 *(pLCDBuffer16I1+i)=(0xf8<<11);/*show bgcolor red 0xf8<<11*/
+	*(pLCDBuffer16I1+i)=(0xf8<<11);/*show bgcolor red 0xf8<<11*/
+	//hudelay(5000);	
     	rLCDCON1+=LCDCON1_ENVID;	
     	for(i=0;i<10000000;i++);
+    	//for(int my=0;my<1000;my++)
+   	// hudelay(10000);	
+    	//while(1); 
 }
 
 
@@ -141,7 +147,7 @@ void LCD_ShowPic(const unsigned char *pic,U16 x0,U16 y0,U16 x1,U16 y1)
          tempcolor=(U16)(pic[2*temp])+((U16)(pic[2*temp+1])<<8);
          if(tempcolor!=0xffff)//定义0xFFFF为透明
          {
-           LCDBuffer565[i-x0][j-y0]=tempcolor;
+            LCDBuffer565[i][j]=tempcolor;
          }
       }
 }
@@ -150,30 +156,23 @@ void LCD_ShowPic(const unsigned char *pic,U16 x0,U16 y0,U16 x1,U16 y1)
 void LCD_Refresh()
 {
   U16 i,j;
+  U16 pixcolor;	//一个像素点的颜色	
   U8* pbuf=(U8*)LCDBufferII2[0];   // by sprife
   U32 LCDBASEU,LCDBASEL,LCDBANK; 
   LCDBANK=I2ADDR>>22;
+  //LCDBASEU=(I2ADDR<<9)>>10;	
   LCDBASEU = (I2ADDR>>1)&0x1FFFFF;       
   LCDBASEL = LCDBASEU+(240)*320;
   rLCDADDR1 = (LCDBANK<<21)|LCDBASEU;   //+ 320;    
   rLCDADDR2 = LCDBASEL;     //+ 320;	
   rLCDADDR3 = (320)|(0<<11); 
-  
+  //hudelay(1000);	
+
   for(i=0;i<LCD_WITCH;i++)
      for(j=0;j<LCD_LENGTH;j++)
       {
          pLCDBuffer16I2[i*LCD_LENGTH+j]=LCDBuffer565[i][j];
       }
-  /*
-    for(i=0;i<240*320;i++)
-         pLCDBuffer16I2[i]=0xFFFF;*/
-   
-  /*
-  for(i=0;i<240;i++)
-     for(j=0;j<320;j++)
-      {
-         pLCDBuffer16I2[i*LCD_LENGTH+j]=0xF100;
-      }*/
 }
 
 /****************************************************************************************
