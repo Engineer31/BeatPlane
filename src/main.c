@@ -11,6 +11,7 @@ int main(void)
     LCD_Init();
     GPIO_Init(); 
     OSInit();               // needed by uC/OS-II //
+    OSInitUart();
     
     OSTaskCreate(Task_Start,(void *)0,
 	   &startup_task_stk[STARTUP_TASK_STK_SIZE-1], STARTUP_TASK_PRIO);

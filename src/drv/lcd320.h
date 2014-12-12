@@ -31,9 +31,6 @@
 #define ZISE_COLOR      0x00f800f8
 #define WHITE_COLOR     0x00f8fcf8
 
-
-
-
 typedef U32 COLOR;
 
 void LCD_ScreenFill(COLOR stColour);

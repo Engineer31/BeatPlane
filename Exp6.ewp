@@ -280,9 +280,11 @@
         <option>
           <name>CCIncludePath2</name>
           <state>$PROJ_DIR$\inc</state>
+          <state>$PROJ_DIR$\src</state>
           <state>$PROJ_DIR$\inc\drv</state>
           <state>$PROJ_DIR$\inc\sys</state>
           <state>$PROJ_DIR$\src\GUI</state>
+          <state>$PROJ_DIR$\src\Pic</state>
           <state>$PROJ_DIR$\src\user</state>
           <state>$PROJ_DIR$\ucos-ii</state>
           <state>$PROJ_DIR$\ucos-ii\ADD</state>
@@ -861,6 +863,9 @@
       </file>
       <file>
         <name>$PROJ_DIR$\src\Pic\MyPlane2.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\src\Pic\MyPlaneD.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$\src\Pic\Pic.h</name>

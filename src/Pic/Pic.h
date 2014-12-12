@@ -13,6 +13,10 @@ extern const unsigned char gImage_MyPlane2[6200];
 extern unsigned short gImage_MyPlane2_Witch;
 extern unsigned short gImage_MyPlane2_Length;
 
+extern unsigned short gImage_MyPlaneD_Witch;
+extern unsigned short gImage_MyPlaneD_Length;
+extern const unsigned char gImage_MyPlaneD[24800]; 
+
 extern const unsigned char gImage_Shot[80];
 extern unsigned short gImage_Shot_Witch;
 extern unsigned short gImage_Shot_Length;
