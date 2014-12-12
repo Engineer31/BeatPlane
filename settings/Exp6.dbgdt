@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1156</ColumnWidth1></Debug-Log>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>867</ColumnWidth1><ColumnWidth2>231</ColumnWidth2><ColumnWidth3>57</ColumnWidth3></Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>340</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        
+        
+        
+      <MixedMode>1</MixedMode><CodeCovShow>0</CodeCovShow><InstrProfShow>0</InstrProfShow></Disassembly>
+    <Watch><Format><struct_types/><watch_formats/></Format><Column0>100</Column0><Column1>100</Column1><Column2>100</Column2><Column3>100</Column3></Watch></Static>
+    <Windows>
+      
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-5749-120</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-5226-130</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-14027-21041</Identity><TabName>Breakpoints</TabName><Factory>Breakpoints</Factory></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-16497-123</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>Exp6</ExpandedNode><ExpandedNode>Exp6/init</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3><Wnd4>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-27246-126</Identity>
+            <TabName>Disassembly</TabName>
+            <Factory>Disassembly</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd4><Wnd5><Tabs><Tab><Identity>TabID-11936-21081</Identity><TabName>Watch</TabName><Factory>Watch</Factory><Session><Expressions><Expression><Expression>shape_k</Expression></Expression><Expression><Expression>shape_r</Expression></Expression><Expression><Expression>NextShape</Expression></Expression><Expression><Expression>gImageBackGround4[0]</Expression></Expression></Expressions><TabId>0</TabId><Column0>100</Column0><Column1>100</Column1><Column2>100</Column2><Column3>100</Column3></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd5></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\drv\cpu.c</Filename><XPos>0</XPos><YPos>27</YPos><SelStart>711</SelStart><SelEnd>711</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\ucos-ii\uhal\isr.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\sys\lib.c</Filename><XPos>0</XPos><YPos>306</YPos><SelStart>7241</SelStart><SelEnd>7241</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\drv\serial-2410.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\sys\Uart.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\ucos-ii\add\Control.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>141</SelStart><SelEnd>141</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\drv\lcd320.h</Filename><XPos>0</XPos><YPos>21</YPos><SelStart>1240</SelStart><SelEnd>1240</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\drv\LCD320.c</Filename><XPos>0</XPos><YPos>124</YPos><SelStart>4113</SelStart><SelEnd>4113</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\Pic\BackGround.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>98</SelStart><SelEnd>98</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\Pic\Pic.h</Filename><XPos>0</XPos><YPos>12</YPos><SelStart>1325</SelStart><SelEnd>1325</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\Pic\MyPlane1.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>30</SelStart><SelEnd>36</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\Pic\MyPlane2.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>100</SelStart><SelEnd>100</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\Pic\SmallFoe.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>81</SelStart><SelEnd>81</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\Pic\Shot.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>73</SelStart><SelEnd>73</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\Pic\SmallFoeD.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>279</SelStart><SelEnd>279</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\Pic\MiddleFoe1.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>85</SelStart><SelEnd>85</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\Pic\MiddleFoe2.c</Filename><XPos>0</XPos><YPos>9</YPos><SelStart>900</SelStart><SelEnd>900</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\Pic\MiddleFoeD.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>38</SelStart><SelEnd>38</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\includes.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>315</SelStart><SelEnd>315</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\app_cfg.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>241</SelStart><SelEnd>241</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\ucos-ii\ADD\OSAddTask.c</Filename><XPos>0</XPos><YPos>43</YPos><SelStart>1357</SelStart><SelEnd>1357</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\app.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>115</SelStart><SelEnd>115</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\drv\LED.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>245</SelStart><SelEnd>259</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\app.c</Filename><XPos>0</XPos><YPos>9</YPos><SelStart>808</SelStart><SelEnd>808</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\drv\LED.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>55</SelStart><SelEnd>55</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\inc\sys\lib.h</Filename><XPos>0</XPos><YPos>12</YPos><SelStart>962</SelStart><SelEnd>962</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>241</SelStart><SelEnd>241</SelEnd></Tab><ActiveTab>26</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\ucos-ii\os_core.c</Filename><XPos>0</XPos><YPos>1293</YPos><SelStart>55203</SelStart><SelEnd>55203</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\ucos-ii\arch\os_cpu_a.s</Filename><XPos>0</XPos><YPos>31</YPos><SelStart>1302</SelStart><SelEnd>1302</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\src\drv\drivers.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\ucos-ii\os_time.c</Filename><XPos>0</XPos><YPos>27</YPos><SelStart>2197</SelStart><SelEnd>2197</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\&#x7814;&#x4e00;&#x8BFe;&#x7A0B;&#x5B66;&#x4e60;\&#x5B9e;&#x65F6;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7eDF;&#x5B9e;&#x9A8C;\Beat Plane\Beat Plane\ucos-ii\uhal\uhal.c</Filename><XPos>0</XPos><YPos>95</YPos><SelStart>3249</SelStart><SelEnd>3249</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-004cb200><key>iaridepm.enu1</key></Toolbar-004cb200></Sizes></Row0><Row1><Sizes><Toolbar-06c82e20><key>debuggergui.enu1</key></Toolbar-06c82e20></Sizes></Row1></Top><Left><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>288</Bottom><Right>414</Right><x>-2</x><y>-2</y><xscreen>416</xscreen><yscreen>251</yscreen><sizeHorzCX>260000</sizeHorzCX><sizeHorzCY>306846</sizeHorzCY><sizeVertCX>260000</sizeVertCX><sizeVertCY>354523</sizeVertCY></Rect></Wnd3></Sizes></Row0></Left><Right><Row0><Sizes><Wnd4><Rect><Top>-2</Top><Left>-2</Left><Bottom>288</Bottom><Right>414</Right><x>-2</x><y>-2</y><xscreen>416</xscreen><yscreen>251</yscreen><sizeHorzCX>260000</sizeHorzCX><sizeHorzCY>306846</sizeHorzCY><sizeVertCX>260000</sizeVertCX><sizeVertCY>354523</sizeVertCY></Rect></Wnd4></Sizes></Row0><Row1><Sizes><Wnd5><Rect><Top>-2</Top><Left>412</Left><Bottom>288</Bottom><Right>718</Right><x>412</x><y>-2</y><xscreen>167</xscreen><yscreen>164</yscreen><sizeHorzCX>104375</sizeHorzCX><sizeHorzCY>200489</sizeHorzCY><sizeVertCX>191250</sizeVertCX><sizeVertCY>354523</sizeVertCY></Rect></Wnd5></Sizes></Row1></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>461</Bottom><Right>1602</Right><x>-2</x><y>-2</y><xscreen>1604</xscreen><yscreen>463</yscreen><sizeHorzCX>1002500</sizeHorzCX><sizeHorzCY>566015</sizeHorzCY><sizeVertCX>260000</sizeVertCX><sizeVertCY>306846</sizeVertCY></Rect></Wnd0></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+

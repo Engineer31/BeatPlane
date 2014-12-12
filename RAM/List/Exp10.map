@@ -1,0 +1,623 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V5.20.2.51007/W32 for ARM              03/Feb/2009  10:02:06 #
+# Copyright 2007-2008 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Exe\Exp10.out #
+#    Map file     =  J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\List\Exp10.ma #
+#                    p                                                        #
+#    Command line =  "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\OSAddTas #
+#                    k.o" "J:\arm2410m_ads\iar\Exp10                          #
+#                    系统移植实验\RAM\Obj\Startup.o"                          #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\Uart.o"  #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\cpu.o"   #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\drivers. #
+#                    o" "J:\arm2410m_ads\iar\Exp10                            #
+#                    系统移植实验\RAM\Obj\exception.o"                        #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\isr.o"   #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\lib.o"   #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\main.o"  #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\os_core. #
+#                    o" "J:\arm2410m_ads\iar\Exp10                            #
+#                    系统移植实验\RAM\Obj\os_cpu_a.o"                         #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\os_cpu_c #
+#                    .o" "J:\arm2410m_ads\iar\Exp10                           #
+#                    系统移植实验\RAM\Obj\os_dbg.o"                           #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\os_flag. #
+#                    o" "J:\arm2410m_ads\iar\Exp10                            #
+#                    系统移植实验\RAM\Obj\os_mbox.o"                          #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\os_mem.o #
+#                    " "J:\arm2410m_ads\iar\Exp10                             #
+#                    系统移植实验\RAM\Obj\os_mutex.o"                         #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\os_q.o"  #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\os_sem.o #
+#                    " "J:\arm2410m_ads\iar\Exp10                             #
+#                    系统移植实验\RAM\Obj\os_task.o"                          #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\os_time. #
+#                    o" "J:\arm2410m_ads\iar\Exp10                            #
+#                    系统移植实验\RAM\Obj\retarget.o"                         #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj\serial-2 #
+#                    410.o" "J:\arm2410m_ads\iar\Exp10                        #
+#                    系统移植实验\RAM\Obj\uhal.o" -o                          #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Exe\Exp10.ou #
+#                    t" --map "J:\arm2410m_ads\iar\Exp10                      #
+#                    系统移植实验\RAM\List\Exp10.map" --config                #
+#                    "J:\arm2410m_ads\iar\Exp10 系统移植实验\s3c2410_ram.icf" #
+#                     --entry __iar_program_start                             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+__endian      = little
+__thumb_aware = enabled
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at MEM:0x0 { section .intvec };
+"P1":  place in [from MEM:0x30204000 to MEM:0x31f00000] { ro };
+"P2":  place in [from MEM:0x30204000 to MEM:0x31f00000] {
+          rw, block CSTACK, block SVC_STACK, block IRQ_STACK, block FIQ_STACK,
+          block UND_STACK, block ABT_STACK, last block HEAP };
+
+  Section            Kind        Address      Size  Object
+  -------            ----        -------      ----  ------
+"A1":                                         0x3c
+  .intvec            ro code  0x00000000      0x3c  exception.o [1]
+                            - 0x0000003c      0x3c
+
+"P1":                                       0x5533
+  .text              ro code  0x30204000    0x1aa4  xprintffull.o [3]
+  .text              ro code  0x30205aa4     0x654  os_core.o [1]
+  .text              ro code  0x302060f8     0x5ec  isr.o [1]
+  .text              ro code  0x302066e4     0x334  DblDiv.o [4]
+  .text              ro code  0x30206a18     0x2e8  serial-2410.o [1]
+  .text              ro code  0x30206d00     0x23c  os_task.o [1]
+  .text              ro code  0x30206f3c     0x200  lib.o [1]
+  .text              ro code  0x3020713c     0x1f8  DblMul.o [4]
+  .text              ro code  0x30207334     0x1f0  DblSub.o [4]
+  .text              ro code  0x30207524     0x1d4  I32DivMod.o [4]
+  .text              ro code  0x302076f8     0x1d0  xdscale.o [3]
+  .text              ro code  0x302078c8     0x1c4  uhal.o [1]
+  .text              ro code  0x30207a8c     0x1b0  cpu.o [1]
+  .text              ro code  0x30207c3c     0x158  xdnorm.o [3]
+  .text              ro code  0x30207d94     0x154  xxmemxmalloc.o [3]
+  .text              ro code  0x30207ee8     0x148  os_cpu_a.o [1]
+  .text              ro code  0x30208030     0x140  DblAdd.o [4]
+  .text              ro code  0x30208170     0x124  I64DivMod.o [4]
+  .text              ro code  0x30208294     0x110  xxmemxfree.o [3]
+  .rodata            const    0x302083a4     0x108  os_core.o [1]
+  Initializer bytes  ro data  0x302084ac      0xe9  <for P2 mid-1>
+  .text              ro code  0x30208598      0xd4  ABImemcpy.o [4]
+  .text              ro code  0x3020866c      0xcc  cppinit.o [3]
+  .text              ro code  0x30208738      0xc0  main.o [1]
+  .text              ro code  0x302087f8      0xbc  xsyslock.o [3]
+  .text              ro code  0x302088b4      0xa8  Startup.o [1]
+  .text              ro code  0x3020895c      0xa0  rle_init2.o [4]
+  .text              ro code  0x302089fc      0x9c  os_cpu_c.o [1]
+  .text              ro code  0x30208a98      0x94  memchr.o [4]
+  .text              ro code  0x30208b2c      0x78  os_flag.o [1]
+  .text              ro code  0x30208ba4      0x78  os_mem.o [1]
+  .text              ro code  0x30208c1c      0x74  xencoding_sb.o [3]
+  .text              ro code  0x30208c90      0x6c  os_time.o [1]
+  .text              ro code  0x30208cfc      0x60  DblToS32.o [4]
+  .text              ro code  0x30208d5c      0x58  os_q.o [1]
+  .text              ro code  0x30208db4      0x58  S32ToDbl.o [4]
+  .text              ro code  0x30208e0c      0x54  strlen.o [4]
+  .rodata            const    0x30208e60      0x4c  cpu.o [1]
+  .text              ro code  0x30208eac      0x4c  OSAddTask.o [1]
+  .rodata            const    0x30208ef8      0x48  xlocale_c.o [3]
+  .text              ro code  0x30208f40      0x48  MtxWrapper.o [3]
+  .text              ro code  0x30208f88      0x44  retarget.o [1]
+  .text              ro code  0x30208fcc      0x44  vsprintf.o [3]
+  .text              ro code  0x30209010      0x3c  DblToU32.o [4]
+  .text              ro code  0x3020904c      0x3c  xgetmemchunk.o [3]
+  .text              ro code  0x30209088      0x38  printf.o [3]
+  .text              ro code  0x302090c0      0x38  DblCmpLe.o [4]
+  .text              ro code  0x302090f8      0x38  DblCmpGe.o [4]
+  .text              ro code  0x30209130      0x34  data_init2.o [4]
+  .text              ro code  0x30209164      0x34  xmbtowc.o [3]
+  .text              ro code  0x30209198      0x34  div.o [3]
+  .text              ro code  0x302091cc      0x2c  isr.o [1]
+  .text              ro code  0x302091f8      0x2c  isr.o [1]
+  .text              ro code  0x30209224      0x28  xprout.o [3]
+  .text              ro code  0x3020924c      0x28  setlocale.o [3]
+  .text              ro code  0x30209274      0x28  xwctomb.o [3]
+  .text              ro code  0x3020929c      0x28  localeconv.o [3]
+  .text              ro code  0x302092c4      0x28  zero_init2.o [4]
+  .rodata            const    0x302092ec      0x24  serial-2410.o [1]
+  .text              ro code  0x30209310      0x24  cmain.o [4]
+  .iar.init_table    const    0x30209334      0x2c  - Linker created -
+  .rodata            const    0x30209360      0x20  uhal.o [1]
+  .text              ro code  0x30209380      0x20  strchr.o [4]
+  .rodata            const    0x302093a0      0x1c  uhal.o [1]
+  .rodata            const    0x302093bc      0x1c  uhal.o [1]
+  .rodata            const    0x302093d8      0x1c  uhal.o [1]
+  .rodata            const    0x302093f4      0x18  main.o [1]
+  .rodata            const    0x3020940c      0x14  OSAddTask.o [1]
+  .rodata            const    0x30209420      0x14  uhal.o [1]
+  .rodata            const    0x30209434      0x14  uhal.o [1]
+  .text              ro code  0x30209448      0x14  XXexit.o [4]
+  .text              ro code  0x3020945c      0x14  xsprout.o [3]
+  .text              ro code  0x30209470      0x14  xmbcurmax.o [3]
+  .text              ro code  0x30209484      0x14  cexit.o [4]
+  .rodata            const    0x30209498      0x10  xprintffull.o [3]
+  .rodata            const    0x302094a8       0xc  lib.o [1]
+  .rodata            const    0x302094b4       0xc  main.o [1]
+  .rodata            const    0x302094c0       0xc  main.o [1]
+  .text              ro code  0x302094cc       0xc  U32ToDbl.o [4]
+  .text              ro code  0x302094d8       0xc  putchar.o [3]
+  .rodata            const    0x302094e4       0x8  xprintffull.o [3]
+  .rodata            const    0x302094ec       0x8  xlocale_c.o [3]
+  .rodata            const    0x302094f4       0x8  xlocale_c.o [3]
+  .rodata            const    0x302094fc       0x8  localeconv.o [3]
+  .rodata            const    0x30209504       0x8  localeconv.o [3]
+  .rodata            const    0x3020950c       0x8  xencoding_sb.o [3]
+  .rodata            const    0x30209514       0x8  xencoding_sb.o [3]
+  .text              ro code  0x3020951c       0x8  low_level_init.o [3]
+  .text              ro code  0x30209524       0x4  exit.o [3]
+  .text              ro code  0x30209528       0x4  IntDivZer.o [4]
+  .rodata            const    0x3020952c       0x2  xlocale_c.o [3]
+  .rodata            const    0x3020952e       0x2  localeconv.o [3]
+  .rodata            const    0x30209530       0x1  xlocale_c.o [3]
+  .rodata            const    0x30209531       0x1  setlocale.o [3]
+  .rodata            const    0x30209532       0x1  localeconv.o [3]
+                            - 0x30209533    0x5533
+
+"P2":                                     0x8de820
+  SVC_STACK                   0x30209538    0x2000  <Block>
+    SVC_STACK        uninit   0x30209538    0x2000  <Block tail>
+  IRQ_STACK                   0x3020b538    0x1000  <Block>
+    IRQ_STACK        uninit   0x3020b538    0x1000  <Block tail>
+  FIQ_STACK                   0x3020c538      0x10  <Block>
+    FIQ_STACK        uninit   0x3020c538      0x10  <Block tail>
+  UND_STACK                   0x3020c548      0x10  <Block>
+    UND_STACK        uninit   0x3020c548      0x10  <Block tail>
+  ABT_STACK                   0x3020c558      0x10  <Block>
+    ABT_STACK        uninit   0x3020c558      0x10  <Block tail>
+  P2 mid-1                    0x3020c568     0x1b8  <Init block>
+    .data            inited   0x3020c568       0xc  drivers.o [1]
+    .data            inited   0x3020c574       0x4  drivers.o [1]
+    .data            inited   0x3020c578       0x4  lib.o [1]
+    .data            inited   0x3020c57c      0x1c  serial-2410.o [1]
+    .data            inited   0x3020c598      0x1c  serial-2410.o [1]
+    .data            inited   0x3020c5b4      0x1c  serial-2410.o [1]
+    .data            inited   0x3020c5d0      0x40  xfiles.o [3]
+    .data            inited   0x3020c610       0x4  cppinit.o [3]
+    .data            inited   0x3020c614      0x84  setlocale.o [3]
+    .data            inited   0x3020c698      0x88  localeconv.o [3]
+  .iar.dynexit                0x3020c720     0x204  <Block>
+    .iar.dynexit     uninit   0x3020c720       0xc  cppinit.o [3]
+    .iar.dynexit     uninit   0x3020c72c     0x1f8  <Block tail>
+  .bss               zero     0x3020c924   0x40000  OSAddTask.o [1]
+  .bss               zero     0x3024c924     0x5e8  isr.o [1]
+  .bss               zero     0x3024cf0c     0x100  lib.o [1]
+  .bss               zero     0x3024d00c   0x80000  main.o [1]
+  .bss               zero     0x302cd00c    0x1bdc  os_core.o [1]
+  .bss               zero     0x302cebe8    0xcb24  os_core.o [1]
+  .bss               zero     0x302db70c    0x55f0  os_core.o [1]
+  .bss               zero     0x302e0cfc       0x4  os_core.o [1]
+  .bss               zero     0x302e0d00     0x800  os_core.o [1]
+  .bss               zero     0x302e1500       0x4  os_core.o [1]
+  .bss               zero     0x302e1504    0x6590  os_core.o [1]
+  .bss               zero     0x302e7a94       0x4  os_core.o [1]
+  .bss               zero     0x302e7a98     0x230  os_core.o [1]
+  .bss               zero     0x302e7cc8       0x4  uhal.o [1]
+  .bss               zero     0x302e7ccc       0x4  uhal.o [1]
+  .bss               zero     0x302e7cd0       0x4  uhal.o [1]
+  .bss               zero     0x302e7cd4       0x4  uhal.o [1]
+  .bss               zero     0x302e7cd8      0x50  xfiles.o [3]
+  .bss               zero     0x302e7d28       0x8  xxmemxmalloc.o [3]
+  .bss               zero     0x302e7d30      0x14  xsyslock.o [3]
+  .bss               zero     0x302e7d44       0x4  xgetmemchunk.o [3]
+  .bss               zero     0x302e7d48       0x4  MtxWrapper.o [3]
+  .bss               zero     0x302e7d4c       0x4  MtxWrapper.o [3]
+  .bss               zero     0x302e7d50       0x4  MtxWrapper.o [3]
+  .bss               zero     0x302e7d54       0x4  MtxWrapper.o [3]
+  HEAP                        0x302e7d58  0x800000  <Block>
+    HEAP             uninit   0x302e7d58  0x800000  <Block tail>
+                            - 0x30ae7d58  0x8de820
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+Kind        Routine           From        Size  To          Size
+----        -------           ----        ----  --          ----
+Zero        __iar_zero_init2                    0x3020c924  0xdb434
+Copy/zeros  __iar_rle_init2   0x302084ac  0xe9
+                                                0x3020c568    0x1b8
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data    rw data
+    ------            -------  -------    -------
+J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj: [1]
+    OSAddTask.o            76       20    262 144
+    Startup.o             168
+    cpu.o                 432       76
+    drivers.o                       15         16
+    exception.o            60
+    isr.o               1 604               1 512
+    lib.o                 512       16        260
+    main.o                192       48    524 288
+    os_core.o           1 620      264    109 756
+    os_cpu_a.o            328
+    os_cpu_c.o            156
+    os_flag.o             120
+    os_mem.o              120
+    os_q.o                 88
+    os_task.o             572
+    os_time.o             108
+    retarget.o             68
+    serial-2410.o         744      117         84
+    uhal.o                452      156         16
+    ---------------------------------------------
+    Total:              7 420      712    898 076
+
+command line: [2]
+    ---------------------------------------------
+    Total:
+
+dl4t_al_if.a: [3]
+    MtxWrapper.o           72                  16
+    cppinit.o             204        5         16
+    div.o                  52
+    exit.o                  4
+    localeconv.o           40       94        136
+    low_level_init.o        8
+    printf.o               56
+    putchar.o              12
+    setlocale.o            40       20        132
+    vsprintf.o             68
+    xdnorm.o              344
+    xdscale.o             464
+    xencoding_sb.o        116       16
+    xfiles.o                        34        144
+    xgetmemchunk.o         60                   4
+    xlocale_c.o                     91
+    xmbcurmax.o            20
+    xmbtowc.o              52
+    xprintffull.o       6 820       24
+    xprout.o               40
+    xsprout.o              20
+    xsyslock.o            188                  20
+    xwctomb.o              40
+    xxmemxfree.o          272
+    xxmemxmalloc.o        340                   8
+    ---------------------------------------------
+    Total:              9 332      284        476
+
+rt4t_al.a: [4]
+    ABImemcpy.o           212
+    DblAdd.o              320
+    DblCmpGe.o             56
+    DblCmpLe.o             56
+    DblDiv.o              820
+    DblMul.o              504
+    DblSub.o              496
+    DblToS32.o             96
+    DblToU32.o             60
+    I32DivMod.o           468
+    I64DivMod.o           292
+    IntDivZer.o             4
+    S32ToDbl.o             88
+    U32ToDbl.o             12
+    XXexit.o               20
+    cexit.o                20
+    cmain.o                36
+    data_init2.o           52
+    memchr.o              148
+    rle_init2.o           160
+    strchr.o               32
+    strlen.o               84
+    zero_init2.o           40
+    ---------------------------------------------
+    Total:              4 076
+
+    Gaps                    3
+    Linker created                  44  8 401 448
+-------------------------------------------------
+    Grand Total:       20 831    1 040  9 300 000
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address     Size  Type      Object
+-----                      -------     ----  ----      ------
+.iar.dynexit$$Base      0x3020c720            --   Gb  - Linker created -
+.iar.dynexit$$Limit     0x3020c924            --   Gb  - Linker created -
+?main                   0x30209310           Code  Gb  cmain.o [4]
+ABT_STACK$$Base         0x3020c558            --   Gb  - Linker created -
+ABT_STACK$$Limit        0x3020c568            --   Gb  - Linker created -
+ARMTargetInit           0x30207a40     0x4c  Code  Gb  uhal.o [1]
+BSPprintf               0x30207108     0x34  Code  Gb  lib.o [1]
+ColdReset               0x302088c4           Code  Gb  Startup.o [1]
+DtorRecArray            0x3020c720      0xc  Data  Lc  cppinit.o [3]
+EINT4_23ack_irq         0x3020615c     0x4c  Code  Lc  isr.o [1]
+EINT4_23mask_irq        0x302061a8     0x28  Code  Lc  isr.o [1]
+EINT4_23unmask_irq      0x302061d0     0x5c  Code  Lc  isr.o [1]
+Enter_DABORT            0x302079ec     0x28  Code  Gb  uhal.o [1]
+Enter_FIQ               0x30207a14     0x28  Code  Gb  uhal.o [1]
+Enter_PABORT            0x302079c4     0x28  Code  Gb  uhal.o [1]
+Enter_SWI               0x3020799c     0x28  Code  Gb  uhal.o [1]
+Enter_UNDEF             0x30207974     0x28  Code  Gb  uhal.o [1]
+FCLK                    0x302e7cd4      0x4  Data  Gb  uhal.o [1]
+FIQ_STACK$$Base         0x3020c538            --   Gb  - Linker created -
+FIQ_STACK$$Limit        0x3020c548            --   Gb  - Linker created -
+HCLK                    0x302e7cd0      0x4  Data  Gb  uhal.o [1]
+HEAP$$Base              0x302e7d58            --   Gb  - Linker created -
+HEAP$$Limit             0x30ae7d58            --   Gb  - Linker created -
+INTS_OFF                0x30207ee8           Code  Gb  os_cpu_a.o [1]
+INTS_ON                 0x30207f00           Code  Gb  os_cpu_a.o [1]
+IRQ_Handler             0x302088b4           Code  Gb  Startup.o [1]
+IRQ_STACK$$Base         0x3020b538            --   Gb  - Linker created -
+IRQ_STACK$$Limit        0x3020c538            --   Gb  - Linker created -
+ISR_Init                0x302064bc    0x11c  Code  Gb  isr.o [1]
+ISR_IrqHandler          0x30206660     0x80  Code  Gb  isr.o [1]
+I_COUNT                 0x302e7cc8      0x4  Data  Lc  uhal.o [1]
+InterruptFunc           0x3024c924    0x5e8  Data  Lc  isr.o [1]
+L0PageTable             0x30200000            --   Gb  command line/config [2]
+NumberOfUartDrv         0x3020c574      0x4  Data  Gb  drivers.o [1]
+OSAddTask_Init          0x30208edc     0x1c  Code  Gb  OSAddTask.o [1]
+OSCtxSwCtr              0x302cd00c      0x4  Data  Gb  os_core.o [1]
+OSEventFreeList         0x302cebe8      0x4  Data  Gb  os_core.o [1]
+OSEventTbl              0x302cebec   0xcb20  Data  Gb  os_core.o [1]
+OSFlagFreeList          0x302e0cfc      0x4  Data  Gb  os_core.o [1]
+OSFlagTbl               0x302db70c   0x55f0  Data  Gb  os_core.o [1]
+OSIdleCtr               0x302cd010      0x4  Data  Gb  os_core.o [1]
+OSInit                  0x30205aa4     0x30  Code  Gb  os_core.o [1]
+OSInitHookBegin         0x30208a94      0x4  Code  Gb  os_cpu_c.o [1]
+OSInitHookEnd           0x30208a90      0x4  Code  Gb  os_cpu_c.o [1]
+OSIntCtxSw              0x30207f20           Code  Gb  os_cpu_a.o [1]
+OSIntEnter              0x30205ad4     0x28  Code  Gb  os_core.o [1]
+OSIntExit               0x30205afc     0xb4  Code  Gb  os_core.o [1]
+OSIntNesting            0x302cd128      0x1  Data  Gb  os_core.o [1]
+OSLockNesting           0x302cd129      0x1  Data  Gb  os_core.o [1]
+OSMapTbl                0x302083a4      0x8  Data  Gb  os_core.o [1]
+OSMemFreeList           0x302e1500      0x4  Data  Gb  os_core.o [1]
+OSMemTbl                0x302e1504   0x6590  Data  Gb  os_core.o [1]
+OSPrioCur               0x302cd12a      0x1  Data  Gb  os_core.o [1]
+OSPrioHighRdy           0x302cd12b      0x1  Data  Gb  os_core.o [1]
+OSQFreeList             0x302e7a94      0x4  Data  Gb  os_core.o [1]
+OSQTbl                  0x302e7a98    0x230  Data  Gb  os_core.o [1]
+OSRdyGrp                0x302cd12c      0x1  Data  Gb  os_core.o [1]
+OSRdyTbl                0x302cd130      0x8  Data  Gb  os_core.o [1]
+OSRunning               0x302cd12d      0x1  Data  Gb  os_core.o [1]
+OSStart                 0x30205bb0     0x60  Code  Gb  os_core.o [1]
+OSStartHighRdy          0x30208008           Code  Gb  os_cpu_a.o [1]
+OSTCBCur                0x302cd014      0x4  Data  Gb  os_core.o [1]
+OSTCBFreeList           0x302cd018      0x4  Data  Gb  os_core.o [1]
+OSTCBHighRdy            0x302cd01c      0x4  Data  Gb  os_core.o [1]
+OSTCBInitHook           0x30208a88      0x4  Code  Gb  os_cpu_c.o [1]
+OSTCBList               0x302cd020      0x4  Data  Gb  os_core.o [1]
+OSTCBPrioTbl            0x302cd024    0x100  Data  Gb  os_core.o [1]
+OSTCBTbl                0x302cd138   0x1ab0  Data  Gb  os_core.o [1]
+OSTaskCreate            0x30206d00     0xf8  Code  Gb  os_task.o [1]
+OSTaskCreateExt         0x30206df8    0x110  Code  Gb  os_task.o [1]
+OSTaskCreateHook        0x30208a80      0x4  Code  Gb  os_cpu_c.o [1]
+OSTaskCtr               0x302cd12e      0x1  Data  Gb  os_core.o [1]
+OSTaskIdleHook          0x30208a8c      0x4  Code  Gb  os_cpu_c.o [1]
+OSTaskIdleStk           0x302e0d00    0x800  Data  Gb  os_core.o [1]
+OSTaskStkInit           0x302089fc     0x84  Code  Gb  os_cpu_c.o [1]
+OSTime                  0x302cd124      0x4  Data  Gb  os_core.o [1]
+OSTimeDly               0x30208c90     0x64  Code  Gb  os_time.o [1]
+OSTimeTick              0x30205c10     0xe0  Code  Gb  os_core.o [1]
+OSTimeTickHook          0x30208a84      0x4  Code  Gb  os_cpu_c.o [1]
+OSUnMapTbl              0x302083ac    0x100  Data  Gb  os_core.o [1]
+OS_FlagInit             0x30208b2c     0x74  Code  Gb  os_flag.o [1]
+OS_InitEventList        0x30205cf0     0x74  Code  Lc  os_core.o [1]
+OS_InitMisc             0x30205d64     0x28  Code  Lc  os_core.o [1]
+OS_InitRdyList          0x30205d8c     0x44  Code  Lc  os_core.o [1]
+OS_InitTCBList          0x30205e28     0x80  Code  Lc  os_core.o [1]
+OS_InitTaskIdle         0x30205dd0     0x58  Code  Lc  os_core.o [1]
+OS_MemClr               0x30205ea8     0x1c  Code  Gb  os_core.o [1]
+OS_MemInit              0x30208ba4     0x74  Code  Gb  os_mem.o [1]
+OS_QInit                0x30208d5c     0x54  Code  Gb  os_q.o [1]
+OS_Sched                0x30205ec4     0x94  Code  Gb  os_core.o [1]
+OS_TASK_SW              0x30207fac           Code  Gb  os_cpu_a.o [1]
+OS_TCBInit              0x30205f84    0x16c  Code  Gb  os_core.o [1]
+OS_TaskIdle             0x30205f58     0x2c  Code  Gb  os_core.o [1]
+OS_TaskStkClr           0x30206f14     0x28  Code  Gb  os_task.o [1]
+PCLK                    0x302e7ccc      0x4  Data  Gb  uhal.o [1]
+Region$$Table$$Base     0x30209334            --   Gb  - Linker created -
+Region$$Table$$Limit    0x30209360            --   Gb  - Linker created -
+SUB_ack_irq             0x3020622c     0x80  Code  Lc  isr.o [1]
+SUB_mask_irq            0x302062ac     0x28  Code  Lc  isr.o [1]
+SUB_unmask_irq          0x302062d4     0x88  Code  Lc  isr.o [1]
+SVC_STACK$$Base         0x30209538            --   Gb  - Linker created -
+SVC_STACK$$Limit        0x3020b538            --   Gb  - Linker created -
+SYS_Task                0x30208eac     0x30  Code  Lc  OSAddTask.o [1]
+SYS_Task_Stack          0x3020c924  0x40000  Data  Gb  OSAddTask.o [1]
+SetISR_Interrupt        0x302065d8     0x88  Code  Gb  isr.o [1]
+Task1                   0x302087b4     0x20  Code  Gb  main.o [1]
+Task2                   0x302087d4     0x24  Code  Gb  main.o [1]
+TimerTickHandle         0x30207934      0x4  Code  Gb  uhal.o [1]
+UND_STACK$$Base         0x3020c548            --   Gb  - Linker created -
+UND_STACK$$Limit        0x3020c558            --   Gb  - Linker created -
+Uart_Init               0x30207048     0x3c  Code  Gb  lib.o [1]
+Uart_SendByte           0x30207084     0x3c  Code  Gb  lib.o [1]
+Uart_SendString         0x302070c0     0x40  Code  Gb  lib.o [1]
+Uart_def                0x302092ec     0x24  Data  Lc  serial-2410.o [1]
+_EncodingSb_Mbtowc      0x30208c48     0x48  Code  Gb  xencoding_sb.o [3]
+_EncodingSb_Wctomb      0x30208c1c     0x2c  Code  Gb  xencoding_sb.o [3]
+_GenldDefault           0x3020565c    0x3e8  Code  Lc  xprintffull.o [3]
+_IsdstStr               0x3020c638      0x4  Data  Gb  setlocale.o [3]
+_LdtobDefault           0x30204f54    0x708  Code  Lc  xprintffull.o [3]
+_LitobDefault           0x30204dc0    0x194  Code  Lc  xprintffull.o [3]
+_LocaleC_lconv          0x30208ef8     0x48  Data  Gb  xlocale_c.o [3]
+_LocaleEncoding         0x3020924c     0x24  Code  Gb  setlocale.o [3]
+_LocaleReturnString     0x3020c648     0x50  Data  Lc  setlocale.o [3]
+_Locale_LconvArray      0x3020c644      0x4  Data  Gb  setlocale.o [3]
+_Locale_Profile         0x3020c614     0x1c  Data  Gb  setlocale.o [3]
+_Locale_aeabi_lconv     0x3020c698     0x38  Data  Gb  localeconv.o [3]
+_Locale_lconv           0x3020c6d0     0x48  Data  Gb  localeconv.o [3]
+_Mbtowc                 0x30209164     0x34  Code  Gb  xmbtowc.o [3]
+_Printf                 0x30204000    0x8f8  Code  Gb  xprintffull.o [3]
+_Prout                  0x30209224     0x28  Code  Gb  xprout.o [3]
+_PutcharsDefault        0x30205a44     0x60  Code  Lc  xprintffull.o [3]
+_PutstrDefault          0x302048f8    0x4c8  Code  Lc  xprintffull.o [3]
+_SProut                 0x3020945c     0x14  Code  Gb  xsprout.o [3]
+_TzoneStr               0x3020c630      0x4  Data  Gb  setlocale.o [3]
+_Wctomb                 0x30209274     0x28  Code  Gb  xwctomb.o [3]
+__aeabi_cdcmple         0x302090c0           Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple        0x302090f8           Code  Gb  DblCmpGe.o [4]
+__aeabi_d2iz            0x30208cfc           Code  Gb  DblToS32.o [4]
+__aeabi_d2uiz           0x30209010           Code  Gb  DblToU32.o [4]
+__aeabi_dadd            0x30208030           Code  Gb  DblAdd.o [4]
+__aeabi_ddiv            0x302066e4           Code  Gb  DblDiv.o [4]
+__aeabi_dmul            0x3020713c           Code  Gb  DblMul.o [4]
+__aeabi_dsub            0x30207334           Code  Gb  DblSub.o [4]
+__aeabi_i2d             0x30208db4           Code  Gb  S32ToDbl.o [4]
+__aeabi_idiv            0x30207524           Code  Gb  I32DivMod.o [4]
+__aeabi_idiv0           0x30209528           Code  Gb  IntDivZer.o [4]
+__aeabi_idivmod         0x30207524           Code  Gb  I32DivMod.o [4]
+__aeabi_ldivmod         0x302081ac           Code  Gb  I64DivMod.o [4]
+__aeabi_memcpy          0x30208598           Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4         0x302085bc           Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8         0x302085bc           Code  Gb  ABImemcpy.o [4]
+__aeabi_ui2d            0x302094cc           Code  Gb  U32ToDbl.o [4]
+__aeabi_uidiv           0x30207534           Code  Gb  I32DivMod.o [4]
+__aeabi_uidivmod        0x30207534           Code  Gb  I32DivMod.o [4]
+__aeabi_uldivmod        0x302081c4           Code  Gb  I64DivMod.o [4]
+__call_dtors            0x302086b8      0x4  Code  Gb  cppinit.o [3]
+__cstart_call_dtors     0x30209488           Code  Gb  cexit.o [4]
+__cxa_atexit            0x3020866c     0x4c  Code  Gb  cppinit.o [3]
+__cxa_finalize          0x302086bc     0x78  Code  Gb  cppinit.o [3]
+__data_Aldata           0x302e7d28      0x8  Data  Gb  xxmemxmalloc.o [3]
+__data_GetMemChunk      0x3020904c     0x3c  Code  Gb  xgetmemchunk.o [3]
+__exit                  0x30209448           Code  Gb  XXexit.o [4]
+__iar_Dnorm             0x30207c3c    0x158  Code  Gb  xdnorm.o [3]
+__iar_Dscale            0x302076f8    0x1d0  Code  Gb  xdscale.o [3]
+__iar_Locksyslock       0x30208824     0x6c  Code  Gb  xsyslock.o [3]
+__iar_Mbcurmax          0x30209470     0x14  Code  Gb  xmbcurmax.o [3]
+__iar_Memchr            0x30208a98           Code  Gb  memchr.o [4]
+__iar_Mtxdst            0x30208f48      0x4  Code  Gb  MtxWrapper.o [3]
+__iar_Mtxinit           0x30208f40      0x8  Code  Gb  MtxWrapper.o [3]
+__iar_Mtxlock           0x30208f68      0x8  Code  Gb  MtxWrapper.o [3]
+__iar_Mtxunlock         0x30208f70      0x8  Code  Gb  MtxWrapper.o [3]
+__iar_Stdout            0x3020c5d0     0x40  Data  Gb  xfiles.o [3]
+__iar_Strchr            0x30209380           Code  Gb  strchr.o [4]
+__iar_Tls_setup__IsdstStr
+                        0x3020c63c      0x4  Data  Gb  setlocale.o [3]
+__iar_Tls_setup__Locale_Profile
+                        0x3020c640      0x4  Data  Gb  setlocale.o [3]
+__iar_Tls_setup__Locale_aeabi_lconv
+                        0x3020c71c      0x4  Data  Gb  localeconv.o [3]
+__iar_Tls_setup__Locale_lconv
+                        0x3020c718      0x4  Data  Gb  localeconv.o [3]
+__iar_Tls_setup__TzoneStr
+                        0x3020c634      0x4  Data  Gb  setlocale.o [3]
+__iar_Unlocksyslock     0x30208890     0x20  Code  Gb  xsyslock.o [3]
+__iar_dadd              0x30208040           Code  Gb  DblAdd.o [4]
+__iar_data_init2        0x30209130     0x34  Code  Gb  data_init2.o [4]
+__iar_dsub              0x30207344           Code  Gb  DblSub.o [4]
+__iar_dsubStart         0x30207364           Code  Gb  DblSub.o [4]
+__iar_i2d               0x30208db8           Code  Gb  S32ToDbl.o [4]
+__iar_program_start     0x00000000           Code  Gb  exception.o [1]
+__iar_rle_init2         0x3020895c     0xa0  Code  Gb  rle_init2.o [4]
+__iar_zero_init2        0x302092c4     0x28  Code  Gb  zero_init2.o [4]
+__low_level_init        0x3020951c      0x8  Code  Gb  low_level_init.o [3]
+__vector                0x00000000           Code  Gb  exception.o [1]
+__vector_0x14           0x00000014           Code  Gb  exception.o [1]
+_exit                   0x30209484           Code  Gb  cexit.o [4]
+ack_irq                 0x302060f8     0x18  Code  Lc  isr.o [1]
+cal_bus_clk             0x30207a8c     0x58  Code  Lc  cpu.o [1]
+clearlocks              0x302087f8     0x2c  Code  Lc  xsyslock.o [3]
+delayLoopCount          0x3020c578      0x4  Data  Lc  lib.o [1]
+div                     0x30209198     0x34  Code  Gb  div.o [3]
+exit                    0x30209524      0x4  Code  Gb  exit.o [3]
+fixup_irq               0x3020635c    0x160  Code  Lc  isr.o [1]
+fputc                   0x30208f88     0x44  Code  Gb  retarget.o [1]
+free                    0x30208294    0x110  Code  Gb  xxmemxfree.o [3]
+get_extIRQ              0x302091f8     0x2c  Code  Wk  isr.o [1]
+get_subIRQ              0x302091cc     0x2c  Code  Wk  isr.o [1]
+hudelay                 0x30206f3c    0x10c  Code  Gb  lib.o [1]
+localeconv              0x3020929c     0x24  Code  Gb  localeconv.o [3]
+main                    0x30208738     0x7c  Code  Gb  main.o [1]
+malloc                  0x30207d94    0x154  Code  Gb  xxmemxmalloc.o [3]
+mask_irq                0x30206110     0x24  Code  Lc  isr.o [1]
+memchr                  0x30208a98           Code  Gb  memchr.o [4]
+mtx                     0x302e7d34     0x10  Data  Lc  xsyslock.o [3]
+mtxdst                  0x302e7d4c      0x4  Data  Lc  MtxWrapper.o [3]
+mtxinit                 0x302e7d48      0x4  Data  Lc  MtxWrapper.o [3]
+mtxlock                 0x302e7d50      0x4  Data  Lc  MtxWrapper.o [3]
+mtxunlock               0x302e7d54      0x4  Data  Lc  MtxWrapper.o [3]
+next_abi_dtor_rec       0x3020c610      0x4  Data  Lc  cppinit.o [3]
+obuf                    0x302e7cd8     0x50  Data  Lc  xfiles.o [3]
+printf                  0x30209088     0x38  Code  Gb  printf.o [3]
+putchar                 0x302094d8      0xc  Code  Gb  putchar.o [3]
+s3c2410_cpu_init        0x30207b4c     0xf0  Code  Gb  cpu.o [1]
+s3c2410_get_bus_clk     0x30207b28     0x24  Code  Gb  cpu.o [1]
+s3c2410_get_cpu_clk     0x30207ae4     0x44  Code  Gb  cpu.o [1]
+s3c2410_serial0_driver  0x3020c57c     0x1c  Data  Gb  serial-2410.o [1]
+s3c2410_serial0_flush_input
+                        0x30206c80      0x8  Code  Lc  serial-2410.o [1]
+s3c2410_serial0_flush_output
+                        0x30206c88      0x8  Code  Lc  serial-2410.o [1]
+s3c2410_serial0_init    0x30206c58      0xc  Code  Lc  serial-2410.o [1]
+s3c2410_serial0_poll    0x30206c78      0x8  Code  Lc  serial-2410.o [1]
+s3c2410_serial0_read    0x30206c64      0x8  Code  Lc  serial-2410.o [1]
+s3c2410_serial0_write   0x30206c6c      0xc  Code  Lc  serial-2410.o [1]
+s3c2410_serial1_driver  0x3020c598     0x1c  Data  Gb  serial-2410.o [1]
+s3c2410_serial1_flush_input
+                        0x30206cb8      0x8  Code  Lc  serial-2410.o [1]
+s3c2410_serial1_flush_output
+                        0x30206cc0      0x8  Code  Lc  serial-2410.o [1]
+s3c2410_serial1_init    0x30206c90      0xc  Code  Lc  serial-2410.o [1]
+s3c2410_serial1_poll    0x30206cb0      0x8  Code  Lc  serial-2410.o [1]
+s3c2410_serial1_read    0x30206c9c      0x8  Code  Lc  serial-2410.o [1]
+s3c2410_serial1_write   0x30206ca4      0xc  Code  Lc  serial-2410.o [1]
+s3c2410_serial2_driver  0x3020c5b4     0x1c  Data  Gb  serial-2410.o [1]
+s3c2410_serial2_flush_input
+                        0x30206cf0      0x8  Code  Lc  serial-2410.o [1]
+s3c2410_serial2_flush_output
+                        0x30206cf8      0x8  Code  Lc  serial-2410.o [1]
+s3c2410_serial2_init    0x30206cc8      0xc  Code  Lc  serial-2410.o [1]
+s3c2410_serial2_poll    0x30206ce8      0x8  Code  Lc  serial-2410.o [1]
+s3c2410_serial2_read    0x30206cd4      0x8  Code  Lc  serial-2410.o [1]
+s3c2410_serial2_write   0x30206cdc      0xc  Code  Lc  serial-2410.o [1]
+serial_drv              0x3020c568      0xc  Data  Gb  drivers.o [1]
+serial_flush_input      0x30206bfc     0x40  Code  Lc  serial-2410.o [1]
+serial_flush_output     0x30206c3c     0x1c  Code  Lc  serial-2410.o [1]
+serial_init             0x30206a18    0x184  Code  Lc  serial-2410.o [1]
+serial_poll             0x30206bd8     0x24  Code  Lc  serial-2410.o [1]
+serial_read             0x30206b9c     0x10  Code  Lc  serial-2410.o [1]
+serial_write            0x30206bac     0x2c  Code  Lc  serial-2410.o [1]
+strchr                  0x30209380           Code  Gb  strchr.o [4]
+strlen                  0x30208e0c           Code  Gb  strlen.o [4]
+syslock_o               0x302e7d30      0x4  Data  Lc  xsyslock.o [3]
+task1_Stack             0x3024d00c  0x40000  Data  Gb  main.o [1]
+task2_Stack             0x3028d00c  0x40000  Data  Gb  main.o [1]
+uHALr_InitTimers        0x302078c8     0x6c  Code  Gb  uhal.o [1]
+uHALr_InstallSystemTimer
+                        0x30207938     0x38  Code  Gb  uhal.o [1]
+uHALr_InterruptRequestInit
+                        0x30207970      0x4  Code  Gb  uhal.o [1]
+unmask_irq              0x30206134     0x28  Code  Lc  isr.o [1]
+vsprintf                0x30208fcc     0x44  Code  Gb  vsprintf.o [3]
+
+
+[1] = J:\arm2410m_ads\iar\Exp10 系统移植实验\RAM\Obj
+[2] = command line
+[3] = dl4t_al_if.a
+[4] = rt4t_al.a
+
+     20 831 bytes of readonly  code memory
+      1 040 bytes of readonly  data memory
+  9 300 000 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

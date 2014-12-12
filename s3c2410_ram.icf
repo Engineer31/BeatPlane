@@ -1,0 +1,30 @@
+define symbol PAGE_TABLE_START  = 0x30200000;
+define symbol PAGE_TABLE_SIZE   = 0x4000;
+
+define symbol EXT_RAM_START	= PAGE_TABLE_START+PAGE_TABLE_SIZE;
+define symbol EXT_RAM_END	= 0x31F00000;
+
+define symbol SRAM_START	= 0x00000000;
+define symbol SRAM_END		= 0x00000FFF;
+
+define memory MEM with size = 2G;
+define region ERAM = MEM:[from EXT_RAM_START to EXT_RAM_END];
+
+define block CSTACK     with alignment = 8, size = 0x10   { };
+define block SVC_STACK	with alignment = 8, size = 0x2000 { };
+define block IRQ_STACK	with alignment = 8, size = 0x1000 { };
+define block FIQ_STACK	with alignment = 8, size = 0x10   { };
+define block UND_STACK	with alignment = 8, size = 0x10   { };
+define block ABT_STACK	with alignment = 8, size = 0x10   { };
+define block HEAP       with alignment = 8, size = 0x800000 { };
+
+initialize by copy { readwrite };
+
+place at address MEM:0x0 { section .intvec };
+place in ERAM { readonly };
+place in ERAM { readwrite,
+                block CSTACK, block SVC_STACK, block IRQ_STACK, 
+                block FIQ_STACK, block UND_STACK, block ABT_STACK,
+                last block HEAP };
+
+define exported symbol L0PageTable = 0x30200000;

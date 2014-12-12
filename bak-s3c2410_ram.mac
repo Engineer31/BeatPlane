@@ -1,0 +1,37 @@
+setup()
+{
+    __writeMemory32(0x00000000, 0x53000000, "Memory");    /* watchdog timer disable */
+
+    __writeMemory32(0xffffffff, 0x4a000008, "Memory");    /* disable all interrupts */
+    __writeMemory32(0x000007ff, 0x4a00001c, "Memory");    /* disable all sub-interrupts */
+    __writeMemory32(0xffffffff, 0x4a000000, "Memory");    /* clear all source pending bits */
+    __writeMemory32(0x000007ff, 0x4a000018, "Memory");    /* clear all sub-source pending bits */
+    __writeMemory32(0xffffffff, 0x4a000010, "Memory");    /* clear interrupt pending bit */
+
+    __writeMemory32(0x00ffffff, 0x4c000000, "Memory");    /* PLL locktime counter */
+    __writeMemory32(0x000a1031, 0x4c000004, "Memory");    /* Fin=12MHz, Fout=202.8MHz */
+    __writeMemory32(0x00000003, 0x4c000014, "Memory");    /* FCLK:HCLK:PCLK = 1:2:4 */
+
+    __writeMemory32(0x22111110, 0x48000000, "Memory");    /* BWSCON */
+    __writeMemory32(0x00007FFC, 0x48000004, "Memory");    /* BANKCON0 */
+    __writeMemory32(0x00007FFC, 0x48000008, "Memory");    /* BANKCON1 */
+    __writeMemory32(0x00000700, 0x4800000c, "Memory");    /* BANKCON2 */
+    __writeMemory32(0x00000700, 0x48000010, "Memory");    /* BANKCON3 */
+    __writeMemory32(0x00002E50, 0x48000014, "Memory");    /* BANKCON4 */
+    __writeMemory32(0x00002E50, 0x48000018, "Memory");    /* BANKCON5 */
+    __writeMemory32(0x00018005, 0x4800001c, "Memory");    /* BANKCON6 */
+    __writeMemory32(0x00018005, 0x48000020, "Memory");    /* BANKCON7 */
+    __writeMemory32(0x008c04e9, 0x48000024, "Memory");    /* REFRESH */
+    __writeMemory32(0x00000032, 0x48000028, "Memory");    /* BANKSIZE */
+    __writeMemory32(0x00000030, 0x4800002c, "Memory");    /* MRSRB6 */
+    __writeMemory32(0x00000030, 0x48000030, "Memory");    /* MRSRB7 */
+}
+
+execUserPreload()
+{
+    __message "Initializing SDRAM ...\n";
+
+    setup();
+
+    __message "Initializing SDRAM ... Completed\n";
+}

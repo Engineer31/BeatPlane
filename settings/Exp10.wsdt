@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>Exp10/RAM</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>222</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      <PreferedWindows><Position>1</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows></Workspace>
+    <Build><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>723</ColumnWidth1><ColumnWidth2>193</ColumnWidth2><ColumnWidth3>48</ColumnWidth3></Build><TerminalIO/><Debug-Log/></Static>
+    <Windows>
+      
+    <Wnd0><Tabs><Tab><Identity>TabID-295-5161</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab><Tab><Identity>TabID-15222-29076</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd0><Wnd2><Tabs><Tab><Identity>TabID-23202-29276</Identity><TabName>Workspace</TabName><Factory>Workspace</Factory><Session><NodeDict><ExpandedNode>Exp10</ExpandedNode><ExpandedNode>Exp10/startup</ExpandedNode></NodeDict></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd2></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>J:\IAR from (wj)\UPTECH2410_EWARMv5\Exp10 &#x7CFB;&#x7eDF;&#x79FB;&#x690D;&#x5B9e;&#x9A8C;\init\exception.s</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>474</SelStart><SelEnd>474</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>J:\IAR from (wj)\UPTECH2410_EWARMv5\Exp10 &#x7CFB;&#x7eDF;&#x79FB;&#x690D;&#x5B9e;&#x9A8C;\init\retarget.c</Filename><XPos>0</XPos><YPos>45</YPos><SelStart>890</SelStart><SelEnd>890</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>J:\IAR from (wj)\UPTECH2410_EWARMv5\Exp10 &#x7CFB;&#x7eDF;&#x79FB;&#x690D;&#x5B9e;&#x9A8C;\src\main.c</Filename><XPos>0</XPos><YPos>46</YPos><SelStart>2125</SelStart><SelEnd>2125</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>J:\arm2410m_ads\iar\Exp10 &#x7CFB;&#x7eDF;&#x79FB;&#x690D;&#x5B9e;&#x9A8C;\src\main.c</Filename><XPos>0</XPos><YPos>35</YPos><SelStart>721</SelStart><SelEnd>721</SelEnd></Tab><ActiveTab>3</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00bee820><key>iaridepm.enu1</key></Toolbar-00bee820></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>516</Bottom><Right>296</Right><x>-2</x><y>-2</y><xscreen>0</xscreen><yscreen>0</yscreen><sizeHorzCX>0</sizeHorzCX><sizeHorzCY>0</sizeHorzCY><sizeVertCX>258681</sizeVertCX><sizeVertCY>657360</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>227</Bottom><Right>1154</Right><x>-2</x><y>-2</y><xscreen>1156</xscreen><yscreen>229</yscreen><sizeHorzCX>1003472</sizeHorzCX><sizeHorzCY>290609</sizeHorzCY><sizeVertCX>0</sizeVertCX><sizeVertCY>0</sizeVertCY></Rect></Wnd0></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+
