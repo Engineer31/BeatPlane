@@ -47,3 +47,37 @@ extern unsigned short gImage_BeatPlane_Text_Witch;
 extern unsigned short gImage_BeatPlane_Text_Length;
 extern const unsigned char gImage_BeatPlane_Text[17976]; 
 
+//SCORE 
+extern unsigned short gImage_Score_Text_Witch;
+extern unsigned short gImage_Score_Text_Length;
+extern const unsigned char gImage_Score_Text[11520];
+
+extern unsigned short gImage_Score_Text1_Witch;
+extern unsigned short gImage_Score_Text1_Length;
+extern const unsigned char gImage_Score_Text1[4920];
+
+//Number
+extern unsigned short gImage_Number_Witch;
+extern unsigned short gImage_Number_Length;
+extern const unsigned char* GetNumberPic(U8 number);
+//0
+extern const unsigned char gImage_Number0[768]; 
+//1
+extern const unsigned char gImage_Number1[768]; 
+//2
+extern const unsigned char gImage_Number2[768]; 
+//3
+extern const unsigned char gImage_Number3[768]; 
+//4
+extern const unsigned char gImage_Number4[768]; 
+//5
+extern const unsigned char gImage_Number5[768]; 
+//6
+extern const unsigned char gImage_Number6[768]; 
+//7
+extern const unsigned char gImage_Number7[768]; 
+//8
+extern const unsigned char gImage_Number8[768]; 
+//9
+extern const unsigned char gImage_Number9[768]; 
+

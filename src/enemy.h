@@ -42,6 +42,11 @@ struct enemystruct
   
   EnemyPlaneStruct BigFoe[MAX_SMALLFOE];
   U8 BigFoe_State;
+  
+  U32 SmallFoe_Dead;
+  U8 SmallFoe_DeadAction[32];
+  
+  U32 Score;
 };
 
 typedef struct enemystruct EnemyStruct;
@@ -54,4 +59,10 @@ void Enemy_AddBigFoe(EnemyStruct* enemy);
 void Enemy_Move(EnemyStruct* enemy);
 
 void Enemy_Show(EnemyStruct* enemy);
+
+void Enemy_GetSmallFoeLocation(EnemyStruct * enemy,U8 i,U16* x0,U16* y0,U16* x1,U16* y1);
+
+void Enemy_DestorySmallFoe(EnemyStruct * enemy,U16 lox,U16 loy);
+
+U32 Enemy_GetScore(EnemyStruct * enemy);
 #endif

@@ -8,17 +8,18 @@
 #define KEY_TASK_PRIO     2					      //键盘任务优先级
 #define MYPLANE_TASK_PRIO 3                                            //主飞机任务优先级
 #define LCD_TASK_PRIO     4                                            //LCD显示优先级
-#define SHOT_TASK_PRIO    10
-#define STATUS_TASK_PRIO    10
+#define SHOT_TASK_PRIO    5
+#define ENEMY_TASK_PRIO    6
+#define STATUS_TASK_PRIO    7
 
 /************设置栈大小（单位为 OS_STK ）************/
-#define STARTUP_TASK_STK_SIZE   100   
-#define STARTGAME_TASK_STK_SIZE 100
+#define STARTUP_TASK_STK_SIZE   50   
+#define STARTGAME_TASK_STK_SIZE 50
 #define KEY_TASK_STK_SIZE 100
-#define MYPLANE_TASK_STK_SIZE  200
+#define MYPLANE_TASK_STK_SIZE  100
 #define LCD_TASK_STK_SIZE 100
 #define SHOT_TASK_STK_SIZE 100
-
+#define ENEMY_TASK_STK_SIZE 100
 #define STATUS_TASK_STK_SIZE 100
 
 #endif

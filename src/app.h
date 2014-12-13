@@ -9,6 +9,7 @@ void Task_Key(void *Id);
 void Task_LCD(void *p_arg);
 void Task_Shot(void *p_arg);
 void Task_Status(void *p_arg);
+void Task_Enemy(void *p_arg);
 
 /************ 用户事件声明 ******************************/
 extern OS_EVENT *Key_Mbox;

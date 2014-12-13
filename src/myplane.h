@@ -52,6 +52,10 @@ void MyPlane_Dead(MyPlaneStruct * plane);
 void MyPlane_AddShot(MyPlaneStruct * plane);
 void MyPlane_ShowShot(MyPlaneStruct * plane);
 
+void MyPlane_GetLocation(MyPlaneStruct * plane,U16* x0,U16* y0,U16* x1,U16* y1);
+void MyPlane_GetShotLocation(MyPlaneStruct * plane,U8 i,U16* x0,U16* y0,U16* x1,U16* y1);
+void MyPlane_DestoryShot(MyPlaneStruct * plane,U16 lox,U16 loy);
+
 
 #define PLANE_NORMAL 1
 #define PLANE_DEAD 0

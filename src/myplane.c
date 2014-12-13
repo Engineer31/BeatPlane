@@ -68,7 +68,7 @@ void MyPlane_Move(MyPlaneStruct * plane,U8 or,U8 step)
    else
    {
    }
-   if(x0>0&&x0<240&&x1>0&&x1<240&&y0>0&&y0<320&&y1>0&&y1<320)
+   if(x0>=0&&x0<=240&&x1>=0&&x1<=240&&y0>=0&&y0<=320&&y1>=0&&y1<=320)
    {
      plane->x0=x0;
      plane->y0=y0;
@@ -144,11 +144,6 @@ void MyPlane_AddAction(MyPlaneStruct * plane)
        (plane->shot[i]).y0=y0;
        (plane->shot[i]).y1=y1;
       }
-      /*
-      (plane->shot{i]).vx0
-      (plane->shot{i]).vy0
-      (plane->shot{i]).vx1
-      (plane->shot{i]).vy1; */
     }
   }
 }
@@ -186,11 +181,6 @@ void MyPlane_AddShot(MyPlaneStruct * plane)
       plane->shotstate |= ((0x0001)<<i);
       break;
       }
-      
-     // (plane->shot{i]).vx0
-      //(plane->shot{i]).vy0
-     // (plane->shot{i]).vx1
-     // (plane->shot{i]).vy1; 
     }
   }
 }
@@ -212,3 +202,59 @@ void MyPlane_ShowShot(MyPlaneStruct * plane)
      }
     }
 }
+
+void MyPlane_GetLocation(MyPlaneStruct * plane,U16* x0,U16* y0,U16* x1,U16* y1)
+{
+    U8 myplane_vx;
+    
+    myplane_vx=15;
+    
+    *x0=plane->x0+myplane_vx;
+    *x1=plane->x1-myplane_vx;
+    *y0=plane->y0;
+    *y1=plane->y1;
+}
+
+void MyPlane_GetShotLocation(MyPlaneStruct * plane,U8 i,U16* x0,U16* y0,U16* x1,U16* y1)
+{
+    if(((plane->shotstate)>>i)&(0x0001)==0x0001)
+    {
+      *x0=plane->shot[i].x0;
+      *x1=plane->shot[i].x1;
+      *y0=plane->shot[i].y0;
+      *y1=plane->shot[i].y1;
+    }
+    else
+    {
+      *x0=0;
+      *y0=0;
+      *x1=0;
+      *y1=0;
+    }
+}
+
+void MyPlane_DestoryShot(MyPlaneStruct * plane,U16 lox,U16 loy)
+{
+    U8 k;
+  U16 x0,x1,y0,y1;
+  
+
+  for(k=0;k<32;k++)
+  {
+               
+           if((((plane->shotstate)>>k)&(0x0001))==0x0001)
+              { 
+                 x0=(plane->shot[k]).x0;
+                 y0=(plane->shot[k]).y0;
+                 x1=(plane->shot[k]).x1;
+                 y1=(plane->shot[k]).y1;
+               
+                 if((x0<=lox)&&(x1>=lox)&&(y0<=loy)&&(y1>=loy))
+                 {
+                      plane->shotstate ^=(0x0001)<<k;
+                 }
+              }
+  }
+}
+
+

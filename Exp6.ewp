@@ -868,7 +868,16 @@
         <name>$PROJ_DIR$\src\Pic\MyPlaneD.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\src\Pic\Number.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\src\Pic\Pic.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\src\Pic\Score_Text.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\src\Pic\Score_Text1.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$\src\Pic\Shot.c</name>
