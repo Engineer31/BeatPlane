@@ -1,7 +1,10 @@
 #include "myplane.h"
 #include "../src/Pic/Pic.h"
+#include "../src/drv/lcd320.h"
 void MyPlane_Init(MyPlaneStruct* plane,U16 x0,U16 y0)
 {
+  U8 i;
+  
   (plane->life)=1;
   plane->status=PLANE_NORMAL;
   plane->action=0;   //动作
@@ -22,6 +25,16 @@ void MyPlane_Init(MyPlaneStruct* plane,U16 x0,U16 y0)
   plane->deadpic[1]=&gImage_MyPlaneD[gImage_MyPlane1_Witch*gImage_MyPlane1_Length*2];
   plane->deadpic[2]=&gImage_MyPlaneD[gImage_MyPlane1_Witch*gImage_MyPlane1_Length*4];
   plane->deadpic[3]=&gImage_MyPlaneD[gImage_MyPlane1_Witch*gImage_MyPlane1_Length*6];
+  
+  plane->shotstate=0x0000;//子弹状态
+  for(i=0;i<32;i++)
+  {
+    (plane->shot[i]).picwitch=gImage_Shot_Witch;
+
+    (plane->shot[i]).piclength=gImage_Shot_Length;
+    (plane->shot[i]).pic=gImage_Shot;
+  }
+
 }
 
 void MyPlane_Move(MyPlaneStruct * plane,U8 or,U8 step)
@@ -89,6 +102,9 @@ const U8* MyPlane_GetPic(MyPlaneStruct * plane,U16* x0,U16* x1,U16* y0,U16* y1)
 
 void MyPlane_AddAction(MyPlaneStruct * plane)
 {
+   U16 x0,x1,y0,y1;
+   U8 i;
+   
   if(plane->status==PLANE_NORMAL)
   {
     plane->action+=1;
@@ -108,6 +124,33 @@ void MyPlane_AddAction(MyPlaneStruct * plane)
   else
   {
   }
+  
+  //子弹运动
+
+  for(i=0;i<32;i++)
+  {
+    if(((plane->shotstate)>>i)&(0x0001)==0x0001)
+    {
+      y0=(plane->shot[i]).y0;
+      y1=(plane->shot[i]).y1;
+      y0=y0+30;
+      y1=y1+30;
+      if(y1>320)
+      {
+        plane->shotstate ^=(0x0001)<<i;
+      }
+      else
+      {
+       (plane->shot[i]).y0=y0;
+       (plane->shot[i]).y1=y1;
+      }
+      /*
+      (plane->shot{i]).vx0
+      (plane->shot{i]).vy0
+      (plane->shot{i]).vx1
+      (plane->shot{i]).vy1; */
+    }
+  }
 }
 
 
@@ -119,4 +162,53 @@ void MyPlane_Dead(MyPlaneStruct * plane)
     plane->status=PLANE_DEAD;
     plane->action=0;
   }
+}
+
+void MyPlane_AddShot(MyPlaneStruct * plane)
+{
+  U8 i;
+  U16 x0,x1,y0,y1;
+  
+  for(i=0;i<32;i++)
+  {
+    if((((plane->shotstate)>>i)&(0x0001))==0x0000)
+    {
+       x0=plane->x0+((plane->picwitch)-(plane->shot[i]).picwitch)/2;
+       y0=plane->y1;
+       x1=x0+(plane->shot[i]).picwitch;
+       y1=y0+(plane->shot[i]).piclength; 
+       if(x0>=0&&x0<=240&&x1>=0&&x1<=240&&y0>=0&&y0<=320&&y1>=0&&y1<=320)
+      {
+      (plane->shot[i]).x0=x0;
+      (plane->shot[i]).y0=y0;
+      (plane->shot[i]).x1=x1;
+      (plane->shot[i]).y1=y1;
+      plane->shotstate |= ((0x0001)<<i);
+      break;
+      }
+      
+     // (plane->shot{i]).vx0
+      //(plane->shot{i]).vy0
+     // (plane->shot{i]).vx1
+     // (plane->shot{i]).vy1; 
+    }
+  }
+}
+
+void MyPlane_ShowShot(MyPlaneStruct * plane)
+{
+  U8 i;
+  U16 x0,x1,y0,y1;
+  
+    for(i=0;i<32;i++)
+    {
+     if((((plane->shotstate)>>i)&(0x0001))==0x0001)
+     {
+      x0=(plane->shot[i]).x0;
+      y0=(plane->shot[i]).y0;
+      x1=(plane->shot[i]).x1;
+      y1=(plane->shot[i]).y1;
+      LCD_ShowPic((plane->shot[i]).pic,x0,y0,x1,y1);
+     }
+    }
 }

@@ -5,12 +5,15 @@ static OS_STK StartGame_task_stk[STARTGAME_TASK_STK_SIZE];
 static OS_STK Key_task_stk[KEY_TASK_STK_SIZE];	
 static OS_STK MyPlane_task_stk[MYPLANE_TASK_STK_SIZE];	
 static OS_STK LCD_task_stk[LCD_TASK_STK_SIZE];
+static OS_STK Shot_task_stk[SHOT_TASK_STK_SIZE];
+static OS_STK Status_task_stk[SHOT_TASK_STK_SIZE];
 
 /************ 用户事件定义 ******************************/
 OS_EVENT *Key_Mbox;
 
 /************定义个体***********************************/
 MyPlaneStruct MyPlane;
+EnemyStruct  Enemy;
 
 //启动任务
 void Task_Start(void *p_arg)
@@ -27,6 +30,7 @@ void Task_Start(void *p_arg)
     
     /*初始化个体*/
     MyPlane_Init(&MyPlane,95,0);
+    Enemy_Init(&Enemy);
     
     /*LCD任务*/
     OSTaskCreate(Task_LCD,(void *)0,
@@ -38,10 +42,18 @@ void Task_Start(void *p_arg)
     
      Key_Mbox = OSMboxCreate((void *)0); 			//创建键盘消息 邮箱
      
+    /*shot任务*/
+    OSTaskCreate(Task_Shot,(void *)0,
+	&Shot_task_stk[SHOT_TASK_STK_SIZE-1],SHOT_TASK_PRIO);	
+     
      
     /*创建键盘任务*/
     OSTaskCreate(Task_Key,(void *)0,
 	   &Key_task_stk[KEY_TASK_STK_SIZE-1],KEY_TASK_PRIO);
+    
+    /*个体状态计算任务*/
+    OSTaskCreate(Task_Status,(void *)0,
+	 &Status_task_stk[STATUS_TASK_STK_SIZE-1],STATUS_TASK_PRIO);
   
     /*
     OSTaskCreate(Task_Touch,(void *)0,
@@ -75,13 +87,9 @@ void Task_StartGame(void *p_arg)
 //主飞机任务
 void Task_MyPlane(void *p_arg)
 {
-
    //初始化飞机
    U8*  msg;
    U8 err;
-   static U16 Myplane_x0=95;
-   static U16 Myplane_y0=0;
-
 
    for(;;)
    {
@@ -110,7 +118,6 @@ void Task_MyPlane(void *p_arg)
           if(0 == msg[4])//中
           {
           }
-    
      } 
      
      OSTimeDlyHMSM(0, 0,0,10);
@@ -118,15 +125,13 @@ void Task_MyPlane(void *p_arg)
    
 }
 
-
 //键盘任务
 void Task_Key(void *p_arg)
 {
   U8 key[5];
   
   for(;;)
-  {
-    
+  {   
     key[0] = read_gpio_bit(GPIO_F3);
     key[1] = read_gpio_bit(GPIO_F5);
     key[2] = read_gpio_bit(GPIO_G1);
@@ -145,6 +150,7 @@ void Task_Key(void *p_arg)
 void Task_LCD(void *p_arg)
 {
   U16 x0,x1,y0,y1;
+  U8 state;
   const U8* pic;
   
   for(;;)
@@ -153,17 +159,43 @@ void Task_LCD(void *p_arg)
     LCD_ShowPic(gImage_BackGround,0,0,gImage_BackGround_Witch+0,gImage_BackGround_Length+0);
     
     /*敌对飞机*/
-    /*大飞机*/
-    /*中飞机*/
-    /*小飞机*/
+    Enemy_Move(&Enemy);
+    Enemy_Show(&Enemy);
+      
+    /*子弹*/
+    MyPlane_ShowShot(&MyPlane);
     
     /*主飞机*/
    // MyPlane_Dead(&MyPlane);
     pic=MyPlane_GetPic(&MyPlane,&x0,&x1,&y0,&y1);
     LCD_ShowPic(pic,x0,y0,x1,y1);
     MyPlane_AddAction(&MyPlane);
+    
     LCD_Refresh();
     
     OSTimeDlyHMSM(0, 0,0,80);
   }
+}
+
+void Task_Shot(void *p_arg)
+{
+    for(;;)
+    {
+       Enemy_AddSmallFoe(&Enemy);
+       MyPlane_AddShot(&MyPlane);
+       OSTimeDlyHMSM(0, 0,0,300);
+    }
+}
+
+void Task_Status(void *p_arg)
+{
+    U8 Clash[240][320];
+    
+    for(;;)
+    {
+      /*注册MyPlane*/
+       MyPlaneStruct MyPlane;
+       EnemyStruct  Enemy;
+       OSTimeDlyHMSM(0, 0,0,300);
+    }
 }

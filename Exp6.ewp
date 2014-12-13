@@ -890,6 +890,12 @@
       <name>$PROJ_DIR$\src\app_cfg.h</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\src\enemy.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\enemy.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\src\includes.h</name>
     </file>
     <file>
