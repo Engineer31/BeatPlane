@@ -100,10 +100,13 @@ const U8* MyPlane_GetPic(MyPlaneStruct * plane,U16* x0,U16* x1,U16* y0,U16* y1)
   return pic;
 }
 
-void MyPlane_AddAction(MyPlaneStruct * plane)
+U8 MyPlane_AddAction(MyPlaneStruct * plane)
 {
    U16 x0,x1,y0,y1;
    U8 i;
+   U8 state;
+   
+   state=0;
    
   if(plane->status==PLANE_NORMAL)
   {
@@ -118,6 +121,7 @@ void MyPlane_AddAction(MyPlaneStruct * plane)
     plane->action+=1;
     if((plane->action)>=4)
     {
+      state=1;
       plane->action=0;
     }
   }
@@ -146,6 +150,8 @@ void MyPlane_AddAction(MyPlaneStruct * plane)
       }
     }
   }
+  
+  return state;
 }
 
 
@@ -256,5 +262,11 @@ void MyPlane_DestoryShot(MyPlaneStruct * plane,U16 lox,U16 loy)
               }
   }
 }
+
+void MyPlane_Destory(MyPlaneStruct * plane)
+{
+    plane->status=PLANE_DEAD;
+}
+
 
 

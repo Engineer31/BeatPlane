@@ -79,5 +79,10 @@ extern const unsigned char gImage_Number7[768];
 //8
 extern const unsigned char gImage_Number8[768]; 
 //9
-extern const unsigned char gImage_Number9[768]; 
+extern const unsigned char gImage_Number9[768];
+
+//endpic
+extern unsigned short gImage_EndPic_Witch;
+extern unsigned short gImage_EndPic_Length;
+extern const unsigned char gImage_EndPic[38400];
 

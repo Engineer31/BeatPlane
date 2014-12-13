@@ -16,6 +16,7 @@ OS_EVENT *Key_Mbox;
 MyPlaneStruct MyPlane;
 EnemyStruct  Enemy;
 U32 GameScore;
+U8 GameOver;
 U8 Clash[240][320];
 
 //启动任务
@@ -35,6 +36,7 @@ void Task_Start(void *p_arg)
     MyPlane_Init(&MyPlane,95,0);
     Enemy_Init(&Enemy);
     GameScore=0;
+    GameOver=0;
     
     /*LCD任务*/
     OSTaskCreate(Task_LCD,(void *)0,
@@ -64,6 +66,17 @@ void Task_Start(void *p_arg)
       
     while (1)
     {
+        if(GameOver==1)//游戏结束处理
+        {
+          OSTaskDel(KEY_TASK_PRIO);
+          OSTaskDel(STATUS_TASK_PRIO);
+          OSTaskDel(ENEMY_TASK_PRIO);
+          OSTaskDel(SHOT_TASK_PRIO);
+
+          OSTaskDel(MYPLANE_TASK_PRIO);
+          OSTaskDel(LCD_TASK_PRIO);
+          break;
+        }
         OSTimeDlyHMSM(0, 0,0,500);
     }
 }
@@ -169,10 +182,9 @@ void Task_LCD(void *p_arg)
     Enemy_Show(&Enemy);
     
     /*主飞机*/
-   // MyPlane_Dead(&MyPlane);
     pic=MyPlane_GetPic(&MyPlane,&x0,&x1,&y0,&y1);
     LCD_ShowPic(pic,x0,y0,x1,y1);
-    MyPlane_AddAction(&MyPlane);
+    GameOver=MyPlane_AddAction(&MyPlane);//添加动作，获取主飞机状态，返回为1时 GameOver
     
     /*分数*/
     LCD_ShowPic(gImage_Score_Text,5,295,5+gImage_Score_Text_Witch,295+gImage_Score_Text_Length);
@@ -221,9 +233,7 @@ void Task_Enemy(void *p_arg)
 void Task_Status(void *p_arg)
 {
     U16 i,j,k;
-    
     U16 x0,x1,y0,y1;
-   
     
     for(;;)
     {  
@@ -281,6 +291,7 @@ void Task_Status(void *p_arg)
           if((Clash[i][j]&(0x81))==0x81)
           {
             /*死亡*/
+            MyPlane_Destory(&MyPlane);
           }
            
           if((Clash[i][j]&(0x41))==0x41)//子弹打到飞机

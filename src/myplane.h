@@ -45,7 +45,7 @@ typedef struct myplanestruct MyPlaneStruct;
 
 void MyPlane_Init(MyPlaneStruct * plane,U16 x0,U16 y0);//x0，y0为初始图片左下角位置
 void MyPlane_Move(MyPlaneStruct * plane,U8 or,U8 step);
-void MyPlane_AddAction(MyPlaneStruct * plane);
+U8 MyPlane_AddAction(MyPlaneStruct * plane);//state 为1时游戏结束
 const U8* MyPlane_GetPic(MyPlaneStruct * plane,U16* x0,U16* x1,U16* y0,U16* y1);
 void MyPlane_Dead(MyPlaneStruct * plane);
 
@@ -54,7 +54,10 @@ void MyPlane_ShowShot(MyPlaneStruct * plane);
 
 void MyPlane_GetLocation(MyPlaneStruct * plane,U16* x0,U16* y0,U16* x1,U16* y1);
 void MyPlane_GetShotLocation(MyPlaneStruct * plane,U8 i,U16* x0,U16* y0,U16* x1,U16* y1);
+
 void MyPlane_DestoryShot(MyPlaneStruct * plane,U16 lox,U16 loy);
+
+void MyPlane_Destory(MyPlaneStruct * plane);
 
 
 #define PLANE_NORMAL 1

@@ -850,6 +850,9 @@
         <name>$PROJ_DIR$\src\Pic\BeatPlane_Text.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\src\Pic\EndPic.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\src\Pic\MiddleFoe1.c</name>
       </file>
       <file>

@@ -2,7 +2,7 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>745638660</fileChecksum>
+  <fileChecksum>860233137</fileChecksum>
   <configuration>
     <name>RAM</name>
     <outputs>
@@ -219,12 +219,15 @@
       <file>$PROJ_DIR$\src\GUI\gui.h</file>
       <file>$PROJ_DIR$\src\Pic\Score_Text1.c</file>
       <file>$PROJ_DIR$\RAM\Obj\Score_Text.pbi</file>
+      <file>$PROJ_DIR$\RAM\Obj\EndPic.pbi</file>
+      <file>$PROJ_DIR$\RAM\Obj\EndPic.o</file>
       <file>$PROJ_DIR$\RAM\Obj\Score_Text.o</file>
       <file>$PROJ_DIR$\src\Pic\Score_Text.c</file>
       <file>$PROJ_DIR$\RAM\Obj\Number.o</file>
       <file>$PROJ_DIR$\RAM\Obj\Number.pbi</file>
       <file>$PROJ_DIR$\RAM\Obj\Score_Text1.pbi</file>
       <file>$PROJ_DIR$\RAM\Obj\Score_Text1.o</file>
+      <file>$PROJ_DIR$\src\Pic\EndPic.c</file>
       <file>$PROJ_DIR$\src\Pic\Number.c</file>
     </outputs>
     <file>
@@ -659,7 +662,7 @@
       <inputs>
         <tool>
           <name>ILINK</name>
-          <file> 117 123 136 112 42 47 48 151 152 108 215 75 213 218 104 103 80 148 65 92 131 159 138 110 51 45 82 208 106 78 113 193 25 199 67 129 30 143 72 126 204 209 116 119 114 33</file>
+          <file> 117 123 214 136 112 42 47 48 151 152 108 217 75 215 220 104 103 80 148 65 92 131 159 138 110 51 45 82 208 106 78 113 193 25 199 67 129 30 143 72 126 204 209 116 119 114 33</file>
         </tool>
       </inputs>
     </file>
@@ -1171,7 +1174,7 @@
       <inputs>
         <tool>
           <name>BILINK</name>
-          <file> 128 141 64 35 122 86 150 153 107 216 62 212 217 102 39 40 125 49 55 36 100 109 203 74 115 105 206 3 134 17 118 96 195 205 202 89 37 58 50 139</file>
+          <file> 128 213 141 64 35 122 86 150 153 107 218 62 212 219 102 39 40 125 49 55 36 100 109 203 74 115 105 206 3 134 17 118 96 195 205 202 89 37 58 50 139</file>
         </tool>
       </inputs>
     </file>
@@ -1193,11 +1196,11 @@
       <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 218</file>
+          <file> 220</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 217</file>
+          <file> 219</file>
         </tool>
       </outputs>
     </file>
@@ -1206,7 +1209,7 @@
       <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 213</file>
+          <file> 215</file>
         </tool>
         <tool>
           <name>BICOMP</name>
@@ -1215,15 +1218,28 @@
       </outputs>
     </file>
     <file>
+      <name>$PROJ_DIR$\src\Pic\EndPic.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 214</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 213</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
       <name>$PROJ_DIR$\src\Pic\Number.c</name>
       <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 215</file>
+          <file> 217</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 216</file>
+          <file> 218</file>
         </tool>
       </outputs>
     </file>
