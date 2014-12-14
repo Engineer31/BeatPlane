@@ -850,6 +850,21 @@
         <name>$PROJ_DIR$\src\Pic\BeatPlane_Text.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\src\Pic\BigFoe1.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\src\Pic\BigFoe2.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\src\Pic\BigFoeD.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\src\Pic\Button_BK.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\src\Pic\Button_ST.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\src\Pic\EndPic.c</name>
       </file>
       <file>
@@ -875,6 +890,15 @@
       </file>
       <file>
         <name>$PROJ_DIR$\src\Pic\Pic.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\src\Pic\Plane_BK1.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\src\Pic\Plane_BK2.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\src\Pic\Plane_BK3.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$\src\Pic\Score_Text.c</name>

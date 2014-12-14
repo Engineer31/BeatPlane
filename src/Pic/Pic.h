@@ -47,6 +47,14 @@ extern unsigned short gImage_BeatPlane_Text_Witch;
 extern unsigned short gImage_BeatPlane_Text_Length;
 extern const unsigned char gImage_BeatPlane_Text[17976]; 
 
+//´ó·É»ú
+extern unsigned short gImage_BigFoe1_Witch;
+extern unsigned short gImage_BigFoe1_Length;
+
+extern const unsigned char gImage_BigFoe1[13200]; 
+extern const unsigned char gImage_BigFoe2[13200]; 
+extern const unsigned char gImage_BigFoeD[28320]; 
+
 //SCORE 
 extern unsigned short gImage_Score_Text_Witch;
 extern unsigned short gImage_Score_Text_Length;
@@ -85,4 +93,21 @@ extern const unsigned char gImage_Number9[768];
 extern unsigned short gImage_EndPic_Witch;
 extern unsigned short gImage_EndPic_Length;
 extern const unsigned char gImage_EndPic[38400];
+
+//button
+extern unsigned short gImage_Button_ST_Witch;
+extern unsigned short gImage_Button_ST_Length;
+extern const unsigned char gImage_Button_ST[3520];
+
+extern unsigned short gImage_Button_BK_Witch;
+extern unsigned short gImage_Button_BK_Length;
+extern const unsigned char gImage_Button_BK[3520];
+
+//plane bk
+extern unsigned short gImage_Plane_BK1_Witch;
+extern unsigned short gImage_Plane_BK1_Length;
+
+extern const unsigned char gImage_Plane_BK1[3132]; 
+extern const unsigned char gImage_Plane_BK2[3132];
+extern const unsigned char gImage_Plane_BK3[3132];
 

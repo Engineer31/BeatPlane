@@ -12,6 +12,9 @@ static OS_STK Status_task_stk[SHOT_TASK_STK_SIZE];
 /************ 用户事件定义 ******************************/
 OS_EVENT *Key_Mbox;
 
+/*函数定义*/
+void Wait_Restart(void);
+
 /************定义个体***********************************/
 MyPlaneStruct MyPlane;
 EnemyStruct  Enemy;
@@ -27,7 +30,8 @@ void Task_Start(void *p_arg)
     uHALr_InstallSystemTimer();//初始化系统时钟
     
     (void)p_arg;// 'p_arg' 并没有用到，防止编译器提示警告
-    
+   while(1)
+   {
     /*创建开始游戏任务*/
     OSTaskCreate(Task_StartGame,(void *)0,
 	 &StartGame_task_stk[STARTGAME_TASK_STK_SIZE-1],STARTGAME_TASK_PRIO);
@@ -75,21 +79,55 @@ void Task_Start(void *p_arg)
 
           OSTaskDel(MYPLANE_TASK_PRIO);
           OSTaskDel(LCD_TASK_PRIO);
+          Wait_Restart();
           break;
         }
-        OSTimeDlyHMSM(0, 0,0,500);
+        OSTimeDlyHMSM(0, 0,0,100);
     }
+    
+   }
 }
 
 //开始游戏任务
 void Task_StartGame(void *p_arg)
 {
+    U8 key[5];
     LCD_ShowPic(gImage_BackGround,0,0,gImage_BackGround_Witch+0,gImage_BackGround_Length+0);
-    LCD_ShowPic(gImage_BeatPlane_Text,(240-gImage_BeatPlane_Text_Witch)/2,100
+    LCD_ShowPic(gImage_BeatPlane_Text,(240-gImage_BeatPlane_Text_Witch)/2,180
                                       ,gImage_BeatPlane_Text_Witch+(240-gImage_BeatPlane_Text_Witch)/2
-                                      ,gImage_BeatPlane_Text_Length+100);
+                                      ,gImage_BeatPlane_Text_Length+180);
     LCD_Refresh();
-    hudelay(30000000);
+    LCD_ShowPic(gImage_Plane_BK1,(240-gImage_Plane_BK1_Witch)/2,100,gImage_Plane_BK1_Witch+(240-gImage_Plane_BK1_Witch)/2,gImage_Plane_BK1_Length+100);
+    hudelay(10000000);
+    LCD_Refresh();
+    LCD_ShowPic(gImage_Plane_BK2,(240-gImage_Plane_BK1_Witch)/2,100,gImage_Plane_BK1_Witch+(240-gImage_Plane_BK1_Witch)/2,gImage_Plane_BK1_Length+100);
+    hudelay(10000000);
+    LCD_Refresh();
+    LCD_ShowPic(gImage_Plane_BK3,(240-gImage_Plane_BK1_Witch)/2,100,gImage_Plane_BK1_Witch+(240-gImage_Plane_BK1_Witch)/2,gImage_Plane_BK1_Length+100);
+    hudelay(10000000);
+    LCD_Refresh();
+    hudelay(10000000);
+    
+    LCD_ShowPic(gImage_BackGround,0,0,gImage_BackGround_Witch+0,gImage_BackGround_Length+0);
+    LCD_ShowPic(gImage_BeatPlane_Text,(240-gImage_BeatPlane_Text_Witch)/2,180
+                                      ,gImage_BeatPlane_Text_Witch+(240-gImage_BeatPlane_Text_Witch)/2
+                                      ,gImage_BeatPlane_Text_Length+180);
+     //Button 
+    LCD_ShowPic(gImage_Button_ST,80,108,80+gImage_Button_BK_Witch,108+gImage_Button_BK_Length);
+    LCD_Refresh();
+    for(;;)
+    {   
+      key[0] = read_gpio_bit(GPIO_F3);
+      key[1] = read_gpio_bit(GPIO_F5);
+      key[2] = read_gpio_bit(GPIO_G1);
+      key[3] = read_gpio_bit(GPIO_G3);
+      key[4] = read_gpio_bit(GPIO_G4);
+    
+      if((key[0]&&key[1]&&key[2]&&key[3]&&key[4])==0)
+      {
+        break;
+      }
+  }
 
     LCD_ShowPic(gImage_BackGround,0,0,gImage_BackGround_Witch+0,gImage_BackGround_Length+0);
     LCD_Refresh();
@@ -102,10 +140,15 @@ void Task_MyPlane(void *p_arg)
    //初始化飞机
    U8*  msg;
    U8 err;
-
+   U32 count;
+   
+   count=0;
+   
    for(;;)
    {
-     msg = (U8 *)OSMboxPend(Key_Mbox, 0, &err);		//接受邮箱消息{按键}
+     count++;
+     
+     msg = (U8 *)OSMboxPend(Key_Mbox, 1, &err);		//接受邮箱消息{按键}
      
      if(OS_NO_ERR == err)
      {
@@ -133,6 +176,7 @@ void Task_MyPlane(void *p_arg)
      } 
      
      OSTimeDlyHMSM(0, 0,0,10);
+    
    }
    
 }
@@ -178,12 +222,13 @@ void Task_LCD(void *p_arg)
     MyPlane_ShowShot(&MyPlane);
     
     /*敌对飞机*/
-    Enemy_Move(&Enemy);
     Enemy_Show(&Enemy);
     
     /*主飞机*/
     pic=MyPlane_GetPic(&MyPlane,&x0,&x1,&y0,&y1);
     LCD_ShowPic(pic,x0,y0,x1,y1);
+    
+    /*增加动作*/
     GameOver=MyPlane_AddAction(&MyPlane);//添加动作，获取主飞机状态，返回为1时 GameOver
     
     /*分数*/
@@ -222,10 +267,28 @@ void Task_Shot(void *p_arg)
 //Enemy任务
 void Task_Enemy(void *p_arg)
 {
+    U32 count;
+    count=0;
     for(;;)
     {
+      count++;
+      Enemy_Move(&Enemy);
+      OSTimeDlyHMSM(0, 0,0,80);
+      if(count%100==0)
+      {
+        Enemy_AddBigFoe(&Enemy);
+      }
+      
+      if(count%10==0)
+      {
        Enemy_AddSmallFoe(&Enemy);
-       OSTimeDlyHMSM(0, 0,0,1000);
+      }
+      
+      if(count%50==0)
+      {
+        Enemy_AddMiddleFoe(&Enemy); 
+      }
+      
     }
 }
 
@@ -281,6 +344,32 @@ void Task_Status(void *p_arg)
               }
         } 
        }
+      
+      //中飞机
+      for(k=0;k<32;k++)
+      {
+        Enemy_GetMiddleFoeLocation(&Enemy,k,&x0,&y0,&x1,&y1);
+        for(i=x0;i<x1;i++)
+        {
+              for(j=y0;j<y1;j++)
+              {
+                Clash[i][j] |= (0x01)<<1;
+              }
+        } 
+       }
+      
+      //大飞机
+      for(k=0;k<32;k++)
+      {
+        Enemy_GetBigFoeLocation(&Enemy,k,&x0,&y0,&x1,&y1);
+        for(i=x0;i<x1;i++)
+        {
+              for(j=y0;j<y1;j++)
+              {
+                Clash[i][j] |= (0x01)<<2;
+              }
+        } 
+       }
                         
       //运算状态
       for(i=0;i<240;i++)
@@ -288,13 +377,14 @@ void Task_Status(void *p_arg)
         for(j=0;j<320;j++)
         {
          
-          if((Clash[i][j]&(0x81))==0x81)
+          if(((Clash[i][j]&(0x81))==0x81)||((Clash[i][j]&(0x82))==0x82)||((Clash[i][j]&(0x84))==0x84))
           {
             /*死亡*/
             MyPlane_Destory(&MyPlane);
           }
-           
-          if((Clash[i][j]&(0x41))==0x41)//子弹打到飞机
+          
+          //子弹打到小飞机
+          if((Clash[i][j]&(0x41))==0x41)
           {
              //寻找相应子弹和飞机并改变状态    
             //子弹
@@ -303,10 +393,87 @@ void Task_Status(void *p_arg)
             //飞机
              Enemy_DestorySmallFoe(&Enemy,i,j);
              
+             break;
             //结束寻找
-         }   
+          }
+          
+          //子弹打到中飞机
+          if((Clash[i][j]&(0x42))==0x42)
+          {
+             //寻找相应子弹和飞机并改变状态    
+            //子弹
+             MyPlane_DestoryShot(&MyPlane,i,j);
+            
+            //飞机
+             Enemy_DestoryMiddleFoe(&Enemy,i,j);
+             
+             break;
+            //结束寻找
+         }
+         
+         //子弹打到大飞机
+          if((Clash[i][j]&(0x44))==0x44)
+          {
+             //寻找相应子弹和飞机并改变状态    
+            //子弹
+             MyPlane_DestoryShot(&MyPlane,i,j);
+            
+            //飞机
+             Enemy_DestoryBigFoe(&Enemy,i,j);
+             
+             break;
+            //结束寻找
+         }
+         
+         
         }
       }
-      OSTimeDlyHMSM(0, 0,0,5);
+      OSTimeDlyHMSM(0, 0,0,50);
     }
+}
+
+//等待重新开始
+void Wait_Restart(void)
+{
+    const U8* pic;
+    U32 number;
+    U16 nblocation;
+    U8 nbchar[10];
+    U8 nbcount;
+    U8 key[5];
+    
+    LCD_ShowPic(gImage_EndPic,40,100,gImage_EndPic_Witch+40,gImage_EndPic_Length+100);
+    
+    //Number
+    number=Enemy_GetScore(&Enemy);
+    nbcount=0;
+    do{
+     nbchar[nbcount++]=number%10;
+     number=number/10;
+    }while(number);
+    
+    nblocation=(240-nbcount*16)/2;
+    do{
+     pic=GetNumberPic(nbchar[--nbcount]);
+     LCD_ShowPic(pic,nblocation,148,nblocation+gImage_Number_Witch,148+gImage_Number_Length);
+     nblocation+=gImage_Number_Witch;
+    }while(nbcount);
+    
+    //Button 
+    LCD_ShowPic(gImage_Button_BK,80,108,80+gImage_Button_BK_Witch,108+gImage_Button_BK_Length);
+    
+    LCD_Refresh();
+    for(;;)
+    {   
+      key[0] = read_gpio_bit(GPIO_F3);
+      key[1] = read_gpio_bit(GPIO_F5);
+      key[2] = read_gpio_bit(GPIO_G1);
+      key[3] = read_gpio_bit(GPIO_G3);
+      key[4] = read_gpio_bit(GPIO_G4);
+    
+      if((key[0]&&key[1]&&key[2]&&key[3]&&key[4])==0)
+      {
+        break;
+      }
+  }
 }
